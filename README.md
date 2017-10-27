@@ -23,7 +23,8 @@
 随后进入详情分析具体结构
 
 ![文章详情页](http://note.youdao.com/yws/public/resource/e68b3209868e4fe0704590f4f9bdd008/xmlnote/WEBRESOURCEd543bd23a32ef6fdfa3f0f619b779973/599)
-可以分析出标题、时间、内容、作者的DOM结构
+
+从上面的标记可以分析出标题、时间、内容、作者的DOM结构
 
 ### 二、引入依赖
 
