@@ -12,7 +12,7 @@
 
 ## 实现过程
 
-首先选择一个要爬取的网站，为了便于处理，选择用markdown格式上传的网站，这里选择了我比较熟悉的简书、csnd、segmentfaultConf，下面以简书30天热门为例。
+首先选择一个要爬取的网站，为了便于处理，选择用markdown格式上传的网站，这里选择了我比较熟悉的简书、csnd、segmentfault，下面以简书30天热门为例。
 
 ### 一、分析页面
 
@@ -22,19 +22,25 @@
 
 随后进入详情分析具体结构
 
-![文章详情页](http://note.youdao.com/yws/public/resource/e68b3209868e4fe0704590f4f9bdd008/xmlnote/WEBRESOURCEd07dbed2cb5d1d05c1029dab393dfa44/593)
+![文章详情页](http://note.youdao.com/yws/public/resource/e68b3209868e4fe0704590f4f9bdd008/xmlnote/WEBRESOURCEd543bd23a32ef6fdfa3f0f619b779973/599)
+
+从上面的标记可以分析出标题、时间、内容、作者的DOM结构
 
 ### 二、引入依赖
 
 爬取网站代码部分：
 
-    var Crawler = require("crawler");
-	var toMarkdown = require('to-markdown');
+```javascript
+var Crawler = require("crawler");
+var toMarkdown = require('to-markdown');
+```
 
 mongodb部分：
 
-    var schemas = require('mongodb');
-	var mongoose = require('mongoose');
+```javascript
+var schemas = require('mongodb');
+var mongoose = require('mongoose');
+```
 
 ### 三、具体实现
 
@@ -177,3 +183,8 @@ module.exports = {
   crawlerThisWeb: config.segmentfaultConf
 };
 ```
+大概思路就是这个样子，具体实现请看源码。
+
+第一次做，感觉还是比较糙，后面会继续优化。
+
+除了使用crawler还可以使用[cheerio](https://github.com/cheeriojs/cheerio)。cheerio思路也很简单，爬取网页，引入该网站使用到的css链接。
