@@ -28,13 +28,17 @@
 
 爬取网站代码部分：
 
-    var Crawler = require("crawler");
-	var toMarkdown = require('to-markdown');
+```javascript
+var Crawler = require("crawler");
+var toMarkdown = require('to-markdown');
+```
 
 mongodb部分：
 
-    var schemas = require('mongodb');
-	var mongoose = require('mongoose');
+```javascript
+var schemas = require('mongodb');
+var mongoose = require('mongoose');
+```
 
 ### 三、具体实现
 
@@ -177,3 +181,8 @@ module.exports = {
   crawlerThisWeb: config.segmentfaultConf
 };
 ```
+大概思路就是这个样子，具体实现请看源码。
+
+第一次做，感觉还是比较糙，后面会继续优化。
+
+除了使用crawler还可以使用[cheerio](https://github.com/cheeriojs/cheerio)。cheerio思路也很简单，爬取网页，引入改网站使用到的css链接。
