@@ -183,8 +183,8 @@ module.exports = {
   crawlerThisWeb: config.segmentfaultConf
 };
 ```
-大概思路就是这个样子，具体实现请看源码。
+大概思路就是这个样子，具体实现请看源码。如果不想以列表的方式进行爬取， 只是想爬取单个文章，请修改crawler.js即可，写法更简单，这里我也就不想说怎么改了（不会的话可以和爬虫告别了）
 
 第一次做，感觉还是比较糙，后面会继续优化。
 
-除了使用crawler还可以使用[cheerio](https://github.com/cheeriojs/cheerio)。cheerio思路也很简单，爬取网页，引入该网站使用到的css链接。
+除了使用crawler还可以使用[cheerio](https://github.com/cheeriojs/cheerio)。cheerio思路也很简单，用http请求爬取网页，引入该网站使用到的css链接。
