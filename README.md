@@ -4,10 +4,7 @@
 
 **为什么要写这个爬虫呢？**
 
-因为前两天时间朋友推荐一个静态网站生成器[Hexo](https://hexo.io/)，我一看可以快速搭建一个博客还挺方便的，但懒惰的我又不想自己写，于是我就想能不能写个爬虫去爬人家网站，刚好是md格式文件放在post文件夹里面就完了。
-
-**为什么选择利用node来写爬虫呢？**
-
+因为前两天时间朋友推荐一个静态网站生成器[Hexo](https://hexo.io/)，我一看可以快速搭建一个博客还挺方便的，但懒惰的我又不想自己写，于是我就想能不能写个爬虫去爬人家网站，刚好是md格式文件放在post文件夹里面就完了**为什么选择利用node来写爬虫呢？**
 就是因为[crawler](https://github.com/bda-research/node-crawler)这个库，全兼容jQuery语法，熟悉的话用起来完全是傻瓜式上手，再用[to-markdown](https://github.com/domchristie/to-markdown)换成需要的markdown格式，存入mongodb，这过程简直不要太爽歪歪。
 
 ## 实现过程
@@ -183,8 +180,5 @@ module.exports = {
   crawlerThisWeb: config.segmentfaultConf
 };
 ```
-大概思路就是这个样子，具体实现请看源码。
-
-第一次做，感觉还是比较糙，后面会继续优化。
-
+大概思路就是这个样子，具体实现请看源码。如果不想以列表的方式进行爬取， 只是想爬取单个文章，请修改crawler.js即可，写法更简单，这里我也就不想说怎么改了（不会的话可以和爬虫告别了）
 除了使用crawler还可以使用[cheerio](https://github.com/cheeriojs/cheerio)。cheerio思路也很简单，爬取网页，引入该网站使用到的css链接。不过本人更青睐功能更强大crawler，因为cheerio还要自己写http请求，麻烦~~
